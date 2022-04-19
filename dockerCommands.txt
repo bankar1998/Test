@@ -1,0 +1,8 @@
+1.docker build -t st-app-controller .
+2.docker network create controller-database
+3.docker network ls
+4.docker container run --network controller-database --name database -p 5003:5003 -d st-job-db-service
+5.docker ps
+
+
+docker container run --network controller-database --name controller -p 5005:5005 -d st-app-controller
